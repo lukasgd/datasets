@@ -1341,7 +1341,7 @@ def encode_nested_example(schema, obj, level=0):
                         break
                 # be careful when comparing tensors here
                 if (
-                    not isinstance(first_elmt, list)
+                    not isinstance(obj, list)
                     or encode_nested_example(schema.feature, first_elmt, level=level + 1) != first_elmt
                 ):
                     return [encode_nested_example(schema.feature, o, level=level + 1) for o in obj]
